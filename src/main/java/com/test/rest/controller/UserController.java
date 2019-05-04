@@ -23,7 +23,7 @@ public class UserController {
 		return userRepository.findAll();
 	}
 
-	@GetMapping("/all/{name}")
+	@GetMapping("/user/{name}")
 	public User findAll(@PathVariable String name) {
 		return userRepository.findAll().stream().filter(u -> u.getFirstName().contains(name)).findFirst().get();
 	}
